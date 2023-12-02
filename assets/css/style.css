@@ -20,7 +20,14 @@ body {
 
 /* Header */
 header {
-    background-color: lightcoral;
+    background-color: #ffffff;
+    padding: 0 1rem;
+    position: fixed;
+    z-index: 99;
+    /* Header now fills MOST of the top of the screen. The next line makes it fill all of the top of the screen */
+    width: 100%;
+    /* The following is the box-shadow styling. First value is horizontal offset (our page is width: 100% so this doesn't apply), second is vertical offset, third is blur and fourth is color */
+    box-shadow: 0 2px 2px #3a3a3a;
 }
 
 h1 {
