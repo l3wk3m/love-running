@@ -122,6 +122,31 @@ main {
     color: #ffffff;
 }
 
+#reasons {
+    margin: 20px auto;
+}
+
+#reasons > h2 {
+    font-size: 280%;
+    text-transform: uppercase;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#benefits {
+    line-height: 20px;
+}
+
+#benefits div {
+    margin-bottom: 20px;
+}
+
+#benefits p {
+    border-top: 1px solid #3a3a3a;
+    margin: 5px 0;
+    padding: 0 20px;
+}
+
 /* Footer */
 #social-networks {
     text-align: center;
