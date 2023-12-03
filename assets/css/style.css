@@ -28,6 +28,10 @@ header {
     width: 100%;
     /* The following is the box-shadow styling. First value is horizontal offset (our page is width: 100% so this doesn't apply), second is vertical offset, third is blur and fourth is color */
     box-shadow: 0 2px 2px #3a3a3a;
+    /* The following CSS code styles our dropdown menu so that it appears in line with the page header / logo, and fold out vertically */
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }
 
 header a {
@@ -66,14 +70,33 @@ nav {
     padding: 0 1rem;
     box-shadow: 0 2px 2px #3a3a3a;
     display: none;
+    /* Top set to 100% so nav always appears above the dropdown. This tells the nav element that the top of the parent should appear at the bottom of its parent */
+    top: 100%;
 }
 
+/* Navbar toggle */
+
+#nav-toggle:checked~nav {
+    display: block;
+}
+
+/* When the NAV-TOGGLE is CHECKED, apply the above style to the NAV */
+
+/* Hide the checkbox */
+#nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    font-size: 2rem;
+}
 
 /* Main Content */
 main {
     background-color: lightblue;
     /* Make main element take up any surplus space to push footer down */
     flex: 1 0 auto;
+    margin-top: 47px;
 }
 
 /* Footer */
