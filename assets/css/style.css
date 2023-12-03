@@ -1,14 +1,14 @@
-/* Google Fonts font family import */
+/* Google fonts import */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
-/* Asterisk wildcard selector added to override default browser styles*/
+/* Asterisk wildcard selector to override default styles added by the browser */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-/* Body */
+/* General styles */
 body {
     min-height: 100vh;
     display: flex;
@@ -18,7 +18,9 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -31,11 +33,8 @@ header {
     padding: 0 1rem;
     position: fixed;
     z-index: 99;
-    /* Header now fills MOST of the top of the screen. The next line makes it fill all of the top of the screen */
     width: 100%;
-    /* The following is the box-shadow styling. First value is horizontal offset (our page is width: 100% so this doesn't apply), second is vertical offset, third is blur and fourth is color */
     box-shadow: 0 2px 2px #3a3a3a;
-    /* The following CSS code styles our dropdown menu so that it appears in line with the page header / logo, and fold out vertically */
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -52,7 +51,7 @@ header a {
     list-style-type: none;
 }
 
-#menu > li {
+#menu>li {
     margin-bottom: 1em;
 }
 
@@ -61,7 +60,6 @@ header a {
 }
 
 /* Navbar styles with dropdown toggle */
-
 nav {
     position: absolute;
     background-color: #ffffff;
@@ -70,19 +68,14 @@ nav {
     padding: 0 1rem;
     box-shadow: 0 2px 2px #3a3a3a;
     display: none;
-    /* Top set to 100% so nav always appears above the dropdown. This tells the nav element that the top of the parent should appear at the bottom of its parent */
     top: 100%;
 }
 
-/* Navbar toggle */
-
+/* Nav toggle */
 #nav-toggle:checked~nav {
     display: block;
 }
 
-/* When the NAV-TOGGLE is CHECKED, apply the above style to the NAV */
-
-/* Hide the checkbox */
 #nav-toggle {
     display: none;
 }
@@ -91,15 +84,14 @@ nav {
     font-size: 2rem;
 }
 
-/* Main Content */
+/* Main content */
 main {
     /* Make main element take up any surplus space to push footer down */
     flex: 1 0 auto;
     margin-top: 47px;
 }
 
-/* Hero Section */
-
+/* Hero section */
 #hero {
     height: 600px;
     width: 100%;
@@ -108,20 +100,23 @@ main {
 }
 
 #cover-text {
-    background-color: rgba(241, 109, 107, 0.7);
+    /* Final rgba value sets the opacity so it is semi-transparent */
+    background-color: rgba(241, 109, 107, .7);
     font-size: 130%;
-    position: absolute; /* This places the text relative to the cover image */
+    position: absolute;
     bottom: 30px;
     width: 80%;
-    mind-height: 200px;
+    min-height: 200px;
     padding-top: 40px;
     padding-left: 10px;
 }
 
-#cover-text > h2, #cover-text > h3 {
+#cover-text>h2,
+#cover-text>h3 {
     color: #ffffff;
 }
 
+/* Reasons section */
 #reasons {
     width: 90%;
     margin: 20px auto;
@@ -133,8 +128,8 @@ main {
     font-size: 280%;
 }
 
-#benefits-physical > div,
-#benefits-mental > div {
+#benefits-physical>div,
+#benefits-mental>div {
     line-height: 20px;
     margin-bottom: 20px;
 }
@@ -146,6 +141,51 @@ main {
 #benefits hr {
     border-top: 1px solid #3a3a3a;
     margin: 5px 0;
+}
+
+#circle-cover-bg {
+    background: url('../images/reasons-image.webp') no-repeat top center / cover;
+    height: 90vw;
+    width: 90vw;
+    margin-bottom: 20px;
+    /* Makes the square image into a circle */
+    border-radius: 50%;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+#benefits-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Meetup Times section */
+#times {
+    background: url('../images/dublin-city.webp') no-repeat center/cover;
+    /* Handles responsivity without the need for a media query */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#times div {
+    color: #fafafa;
+    background-color: rgba(0, 0, 0, .6);
+    padding: 15px;
+    text-align: center;
+    /* This will not wrap on screens of less than 400px wide.
+    Each div will expand to fill the available space on its row */
+    /* Gives the divs a base width of at least 200px */
+    flex-basis: 200px;
+    /* Has the divs expand when there's enough space on the screen */
+    flex-grow: 1;
+    /* Creates a grid of meetup time divs over the background image */
+    border: 2px solid white;
+}
+
+#times h3 {
+    /* Override the heading colour set in general styles */
+    color: #fafafa;
 }
 
 /* Footer */
@@ -163,39 +203,23 @@ main {
     color: #3a3a3a;
 }
 
-#circle-cover-bg {
-    background: url('../images/reasons-image.webp') no-repeat top center / cover;
-    height: 90vw;
-    width: 90vw;
-    margin-bottom: 20px;
-    /* Makes square into a circle */
-    border-radius: 50%;
-    max-width: 300px;
-    max-height: 300px;
-}
-
-#benefits-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Media query: Tablets and larger (768px and up) */
+/* Media query: tablets and larger (768px and up) */
 @media screen and (min-width: 768px) {
+
     /* Header */
     nav {
         display: block;
         position: relative;
         box-shadow: none;
         width: fit-content;
-        padding-righ: 1rem;
+        padding-right: 1rem;
     }
 
     #menu {
         display: flex;
     }
 
-    #menu > li {
+    #menu>li {
         padding-left: 1rem;
     }
 
@@ -209,43 +233,47 @@ main {
         margin: 0 0.5rem;
     }
 
-    /* Push main down to accomodate larger logo */
-
+    /* Main content */
     main {
+        /* Push main content down to accommodate larger header */
         margin-top: 79px;
     }
 
+    /* Hero */
     #cover-text {
         width: 300px;
         right: 50px;
     }
 
-    #benefits-physical, #benefits-mental {
+    /* Reasons section */
+    #benefits-physical,
+    #benefits-mental {
         display: flex;
         flex-direction: column;
         width: 100%;
     }
 
-    #benefits-physical > div, #benefits-mental > div {
+    #benefits-physical>div,
+    #benefits-mental>div {
         width: 75%;
-    } 
+    }
 
-    #benefits-mental > div {
+    #benefits-mental>div {
         text-align: end;
         align-self: flex-end;
     }
 }
 
-/* Media query: Laptops and larger (992px and up) */
+/* Large devices (laptops and desktops, 992px and up) */
 @media screen and (min-width: 992px) {
     #menu a:hover {
         border-bottom: 1px solid #3a3a3a;
     }
 }
 
-/* Media query: Laptops and larger (1200px and up) */
-@media screen and (min-width: 1200px) {
-     #benefits {
+@media screen and (min-width: 1200px) {    
+    /* Reasons section */
+    #benefits {
         display: flex;
         flex-direction: row;
     }
@@ -255,7 +283,7 @@ main {
     }
 
     #benefits-image {
-        order: 0;
+        order: 0
     }
 
     #benefits-mental {
