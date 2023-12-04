@@ -192,6 +192,19 @@ main {
     color: #fafafa;
 }
 
+/* Gallery */
+
+#photos img {
+    width: 100%;
+    /* Now we add back in a line height so the alt text stays readable in case an image link breaks */
+    line-height: 1em;
+}
+
+#photos {
+    /* These are being treated as inline text elements. This means they have a natural whitespace gap based on line height. We fix that here. */
+    line-height: 0;
+}
+
 /* Footer */
 #social-networks {
     text-align: center;
