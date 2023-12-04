@@ -220,6 +220,16 @@ main {
     color: #3a3a3a;
 }
 
+/* Media query for larger or landscape phones */
+@media screen and (min-width: 576px) {
+    #photos {
+        column-count: 2;
+        /* How many columns we want at this width */
+        column-gap: 0;
+        /* Same functionality as changing the line height */
+    }
+}
+
 /* Media query: tablets and larger (768px and up) */
 @media screen and (min-width: 768px) {
 
@@ -279,12 +289,24 @@ main {
         text-align: end;
         align-self: flex-end;
     }
+
+    /* Gallery Columns */
+
+    #photos {
+        column-count: 3;
+    }
 }
 
 /* Large devices (laptops and desktops, 992px and up) */
 @media screen and (min-width: 992px) {
     #menu a:hover {
         border-bottom: 1px solid #3a3a3a;
+    }
+
+    /* Gallery Columns */
+
+    #photos {
+        column-count: 4;
     }
 }
 
@@ -314,4 +336,11 @@ main {
     #benefits-physical > div {
         align-self: flex-end;
     }
+
+    /* Gallery Columns */
+
+    #photos {
+        column-count: 5;
+        column-gap: 0;
+    }    
 }
